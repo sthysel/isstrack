@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN env --unset=DEBIAN_FRONTEND
 
-CMD ["/bin/bash"]
+CMD ["python", "isstrack.py"]
