@@ -1,0 +1,4 @@
+isstrack:
+    build: .
+    volumes:
+        - .:/usr/src/app
