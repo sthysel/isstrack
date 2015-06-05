@@ -1,6 +1,12 @@
+#! /usr/bin/env python3.4
+
+import certifi
 import requests
 import time
 from math import asin, cos, radians, sin, sqrt
+
+import requests.packages.urllib3 as urllib3
+urllib3.disable_warnings()
 
 url = "https://api.wheretheiss.at/v1/satellites/25544"
 
@@ -9,6 +15,7 @@ home_pos = (45.686, -121.566)
 
 
 def get_iis_position():
+    #  res = requests.get(url, verify=certifi.where()).json()
     res = requests.get(url, verify=False).json()
     iss_pos = (res['latitude'], res['longitude'])
     dist = get_spherical_distance(home_pos, iss_pos)
