@@ -1,4 +1,6 @@
 isstrack:
+    hostname: isstrack
+    name: isstrack
     build: .
     volumes:
         - .:/usr/src/app
